@@ -37,12 +37,17 @@ public class ActStart extends ActBase {
 	}
 
 	private void switch2Main() {
-		switchActivityAndFinish(ActMain.class, null);
+		switchActivityAndFinish(ActRecommend.class, null);
 	}
 
 	@Override
 	public void onBackPressed() {
 
+	}
+
+	@Override
+	protected View loadABCustomView() {
+		return null;
 	}
 
 }

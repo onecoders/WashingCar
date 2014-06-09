@@ -40,7 +40,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.ActMain"
+            android:name=".activity.ActRecommend"
             android:screenOrientation="portrait" />
     </application>
 

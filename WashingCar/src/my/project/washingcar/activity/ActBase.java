@@ -19,11 +19,7 @@ import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.TextView;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
@@ -35,11 +31,8 @@ import com.actionbarsherlock.app.SherlockActivity;
  * @email onecoders@gmail.com
  */
 
-public class ActBase extends SherlockActivity implements OnClickListener,
+public abstract class ActBase extends SherlockActivity implements
 		OnCancelListener {
-
-	private TextView title;
-	protected Button abLeftBtn, abRightBtn;
 
 	private ProgressHUD mProgressHUD;
 
@@ -77,45 +70,9 @@ public class ActBase extends SherlockActivity implements OnClickListener,
 		View customerView = loadABCustomView();
 		// Now set custom view
 		initActionBarAndSetCustomView(actionBar, customerView);
-		// init actionbar content
-		initAbContent();
 	}
 
-	private View loadABCustomView() {
-		View abView = LayoutInflater.from(this).inflate(R.layout.ab_main, null);
-		abLeftBtn = (Button) abView.findViewById(R.id.ab_left_btn);
-		abLeftBtn.setOnClickListener(this);
-		title = (TextView) abView.findViewById(R.id.ab_title);
-		abRightBtn = (Button) abView.findViewById(R.id.ab_right_btn);
-		return abView;
-	}
-
-	@Override
-	public void onClick(View v) {
-		if (v.getId() == R.id.ab_left_btn) {
-			onBackPressed();
-		}
-	}
-
-	protected void setAbLeftBtnText(int resid) {
-		abLeftBtn.setText(resid);
-	}
-
-	protected void setAbTitle(int resid) {
-		title.setText(resid);
-	}
-
-	protected void showAbRightBtn() {
-		abRightBtn.setVisibility(View.VISIBLE);
-	}
-
-	protected void setAbRightBtnText(int resid) {
-		abRightBtn.setText(resid);
-	}
-
-	protected void setAbRightBtnClickListener(OnClickListener listener) {
-		abRightBtn.setOnClickListener(listener);
-	}
+	protected abstract View loadABCustomView();
 
 	private static void initActionBarAndSetCustomView(ActionBar actionBar,
 			View customerView) {
@@ -132,10 +89,6 @@ public class ActBase extends SherlockActivity implements OnClickListener,
 		actionBar.setDisplayShowTitleEnabled(false);
 		// Now set custom view
 		actionBar.setCustomView(customerView, params);
-	}
-
-	protected void initAbContent() {
-
 	}
 
 	protected void showDialog(int titleId, int msgId, int leftBtnText,
@@ -160,13 +113,13 @@ public class ActBase extends SherlockActivity implements OnClickListener,
 		dialog.show();
 	}
 
+	protected void showProgressHUD() {
+		showProgressHUD(R.string.hint_when_loading);
+	}
+
 	protected void showProgressHUD(int resid) {
 		mProgressHUD = ProgressHUD.show(this, getString(resid), true, false,
 				this);
-	}
-
-	protected void showProgressHUD() {
-		showProgressHUD(R.string.hint_when_loading);
 	}
 
 	protected void setMessage(String message) {
@@ -192,10 +145,6 @@ public class ActBase extends SherlockActivity implements OnClickListener,
 
 	protected void showToast(String msg) {
 		MToast.showText(this, msg);
-	}
-
-	protected void setText(TextView tv, String txt) {
-		tv.setText(txt);
 	}
 
 	protected void switchActivity(Class<?> cls, Bundle extras) {
