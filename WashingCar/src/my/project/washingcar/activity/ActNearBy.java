@@ -6,12 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-public class ActIndex extends ActBase implements OnClickListener {
+public class ActNearBy extends ActBase implements OnClickListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.act_index);
+		setContentView(R.layout.act_recommend);
 		init();
 	}
 
