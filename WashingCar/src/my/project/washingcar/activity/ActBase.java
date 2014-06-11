@@ -6,8 +6,6 @@ import my.project.washingcar.F;
 import my.project.washingcar.R;
 import my.project.washingcar.utils.MToast;
 import my.project.washingcar.utils.NetworkUtil;
-import my.project.washingcar.view.NewAlertDialog;
-import my.project.washingcar.view.NewAlertDialog.OnDialogBtnClickListener;
 import my.project.washingcar.view.ProgressHUD;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -89,28 +87,6 @@ public abstract class ActBase extends SherlockActivity implements
 		actionBar.setDisplayShowTitleEnabled(false);
 		// Now set custom view
 		actionBar.setCustomView(customerView, params);
-	}
-
-	protected void showDialog(int titleId, int msgId, int leftBtnText,
-			int rightBtnText, OnDialogBtnClickListener listener) {
-		showDialog(titleId, getString(msgId), leftBtnText, false, rightBtnText,
-				listener);
-	}
-
-	protected void showDialog(int titleId, String msg, int leftBtnText,
-			boolean hideRightBtn, int rightBtnText,
-			OnDialogBtnClickListener listener) {
-		NewAlertDialog dialog = new NewAlertDialog(this);
-		dialog.setTitle(titleId);
-		dialog.setMessage(msg);
-		dialog.setLeftBtnText(leftBtnText);
-		dialog.setDialogBtnClickListener(listener);
-		if (hideRightBtn) {
-			dialog.hideRightBtn();
-		} else {
-			dialog.setRightBtnText(rightBtnText);
-		}
-		dialog.show();
 	}
 
 	protected void showProgressHUD() {

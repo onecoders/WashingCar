@@ -37,7 +37,7 @@ public class ActStart extends ActBase {
 	}
 
 	private void switch2Main() {
-		switchActivityAndFinish(ActRecommend.class, null);
+		switchActivityAndFinish(ActIndex.class, null);
 	}
 
 	@Override
