@@ -1,11 +1,20 @@
 package my.project.washingcar.activity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import my.project.washingcar.R;
+import my.project.washingcar.adapter.AdaShopBrief;
+import my.project.washingcar.model.ShopBrief;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ListView;
 
 public class ActRecommend extends ActBase implements OnClickListener {
+
+	private ListView recommendShops;
+	private List<ShopBrief> shopBrieves;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +25,7 @@ public class ActRecommend extends ActBase implements OnClickListener {
 
 	private void init() {
 		initAbView();
+		initViews();
 	}
 
 	private void initAbView() {
@@ -23,6 +33,24 @@ public class ActRecommend extends ActBase implements OnClickListener {
 		abView.findViewById(R.id.recommend_area).setOnClickListener(this);
 		abView.findViewById(R.id.recommend_map).setOnClickListener(this);
 		abView.findViewById(R.id.recommend_search).setOnClickListener(this);
+	}
+
+	private void initViews() {
+		recommendShops = (ListView) findViewById(R.id.recommend_shops);
+		shopBrieves = new ArrayList<ShopBrief>();
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		loadContent();
+	}
+
+	private void loadContent() {
+		for (int i = 0; i < 10; i++) {
+			shopBrieves.add(new ShopBrief());
+		}
+		recommendShops.setAdapter(new AdaShopBrief(this, shopBrieves));
 	}
 
 	@Override

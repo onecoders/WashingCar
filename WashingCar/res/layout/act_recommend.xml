@@ -10,4 +10,16 @@
         android:layout_height="@dimen/action_bar_default_height"
         layout="@layout/ab_recommend" />
 
+    <ListView
+        android:id="@+id/recommend_shops"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1.0"
+        android:divider="@null"
+        android:dividerHeight="0.0px"
+        android:fadingEdgeLength="0dip"
+        android:listSelector="@null"
+        android:scrollbars="none" >
+    </ListView>
+
 </LinearLayout>
