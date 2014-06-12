@@ -5,7 +5,7 @@
     android:background="@color/ab_bg" >
 
     <ImageView
-        android:id="@+id/recommend_logo"
+        android:id="@+id/nearby_logo"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
@@ -15,19 +15,19 @@
         android:src="@drawable/logo" />
 
     <TextView
-        android:id="@+id/recommend_area"
+        android:id="@+id/nearby_category"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/recommend_logo"
+        android:layout_toRightOf="@id/nearby_logo"
         android:background="@drawable/sel_topnav_icon_arrow"
-        android:text="常州"
+        android:text="最近距离"
         android:textColor="#ffffff"
         android:textSize="14sp" />
 
     <ImageView
-        android:id="@+id/recommend_search"
+        android:id="@+id/nearby_search"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_alignParentRight="true"
@@ -37,12 +37,12 @@
         android:src="@drawable/sel_topnav_icon_search" />
 
     <ImageView
-        android:id="@+id/recommend_map"
+        android:id="@+id/nearby_map"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_centerVertical="true"
         android:layout_marginRight="10dp"
-        android:layout_toLeftOf="@id/recommend_search"
+        android:layout_toLeftOf="@id/nearby_search"
         android:contentDescription="@string/contentDescription"
         android:src="@drawable/sel_topnav_icon_map" />
 

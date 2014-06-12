@@ -10,7 +10,7 @@ public class ActNearBy extends ActBase implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.act_recommend);
+		setContentView(R.layout.act_nearby);
 		init();
 	}
 
@@ -19,22 +19,22 @@ public class ActNearBy extends ActBase implements OnClickListener {
 	}
 
 	private void initAbView() {
-		View abView = findViewById(R.id.header_recommend);
-		abView.findViewById(R.id.area).setOnClickListener(this);
-		abView.findViewById(R.id.map).setOnClickListener(this);
-		abView.findViewById(R.id.search).setOnClickListener(this);
+		View abView = findViewById(R.id.header_nearby);
+		abView.findViewById(R.id.nearby_category).setOnClickListener(this);
+		abView.findViewById(R.id.nearby_map).setOnClickListener(this);
+		abView.findViewById(R.id.nearby_search).setOnClickListener(this);
 	}
 
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.area:
+		case R.id.nearby_category:
 
 			break;
-		case R.id.map:
+		case R.id.nearby_map:
 
 			break;
-		case R.id.search:
+		case R.id.nearby_search:
 
 			break;
 		default:
