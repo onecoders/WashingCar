@@ -8,9 +8,6 @@
     <string name="tab_title_recommend">推荐</string>
     <string name="tab_title_nearby">附近商家</string>
     <string name="tab_title_me">我</string>
-    <string name="tab_spec_recommend">Recommend</string>
-    <string name="tab_spec_nearby">Nearby</string>
-    <string name="tab_spec_me">Me</string>
     <!-- modify if new version -->
     <string name="default_version_name">1.0.0</string>
     <!-- data load and net -->

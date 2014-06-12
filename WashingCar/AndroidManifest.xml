@@ -28,11 +28,11 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/Theme.Sherlock" >
+        android:theme="@android:style/Theme.Light" >
         <activity
             android:name=".activity.ActStart"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Sherlock.NoActionBar" >
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,20 +41,16 @@
         </activity>
         <activity
             android:name=".activity.ActMain"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.Sherlock.NoActionBar" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.ActRecommend"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.Sherlock" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.ActNearBy"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.Sherlock" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.ActMe"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.Sherlock" />
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

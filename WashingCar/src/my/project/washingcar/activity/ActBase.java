@@ -7,6 +7,7 @@ import my.project.washingcar.R;
 import my.project.washingcar.utils.MToast;
 import my.project.washingcar.utils.NetworkUtil;
 import my.project.washingcar.view.ProgressHUD;
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -16,11 +17,6 @@ import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.Gravity;
-import android.view.View;
-
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockActivity;
 
 /**
  * Base Activity
@@ -29,8 +25,7 @@ import com.actionbarsherlock.app.SherlockActivity;
  * @email onecoders@gmail.com
  */
 
-public abstract class ActBase extends SherlockActivity implements
-		OnCancelListener {
+public abstract class ActBase extends Activity implements OnCancelListener {
 
 	private ProgressHUD mProgressHUD;
 
@@ -60,33 +55,6 @@ public abstract class ActBase extends SherlockActivity implements
 	private void init() {
 		currentConnected = isNetworkConnected();
 		registerReceiver();
-	}
-
-	protected void initActionBar() {
-		ActionBar actionBar = getSupportActionBar();
-		// Get custom view
-		View customerView = loadABCustomView();
-		// Now set custom view
-		initActionBarAndSetCustomView(actionBar, customerView);
-	}
-
-	protected abstract View loadABCustomView();
-
-	private static void initActionBarAndSetCustomView(ActionBar actionBar,
-			View customerView) {
-		// set LayoutParams
-		ActionBar.LayoutParams params = new ActionBar.LayoutParams(
-				ActionBar.LayoutParams.MATCH_PARENT,
-				ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-		// Set display to custom next
-		actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-		// Do any other config to the action bar
-		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-		actionBar.setDisplayShowHomeEnabled(false);
-		actionBar.setDisplayHomeAsUpEnabled(false);
-		actionBar.setDisplayShowTitleEnabled(false);
-		// Now set custom view
-		actionBar.setCustomView(customerView, params);
 	}
 
 	protected void showProgressHUD() {

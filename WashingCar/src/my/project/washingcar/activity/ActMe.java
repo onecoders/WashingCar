@@ -16,17 +16,15 @@ public class ActMe extends ActBase implements OnClickListener {
 	}
 
 	private void init() {
-		initActionBar();
+		initAbView();
 	}
 
-	@Override
-	protected View loadABCustomView() {
+	private void initAbView() {
 		View abView = LayoutInflater.from(this)
 				.inflate(R.layout.ab_index, null);
 		abView.findViewById(R.id.area).setOnClickListener(this);
 		abView.findViewById(R.id.map).setOnClickListener(this);
 		abView.findViewById(R.id.search).setOnClickListener(this);
-		return abView;
 	}
 
 	@Override

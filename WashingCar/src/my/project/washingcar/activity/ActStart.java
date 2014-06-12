@@ -45,9 +45,4 @@ public class ActStart extends ActBase {
 
 	}
 
-	@Override
-	protected View loadABCustomView() {
-		return null;
-	}
-
 }
