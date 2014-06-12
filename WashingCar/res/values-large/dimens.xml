@@ -5,19 +5,4 @@
          screen margins) for sw600dp devices (e.g. 7" tablets) here.
     -->
 
-
-    <!-- new alert dialog -->
-    <dimen name="dialog_title_margin_top">26dip</dimen>
-    <dimen name="dialog_message_margin">10dip</dimen>
-    <dimen name="dialog_message_padding">15dip</dimen>
-    <dimen name="dialog_btn_container_margin">15dip</dimen>
-    <dimen name="dialog_btn_margin">10dip</dimen>
-
-    <!-- text size -->
-    <dimen name="ab_title_txt">22sp</dimen>
-    <dimen name="ab_btn_txt">15sp</dimen>
-    <dimen name="dialog_title_txt">28sp</dimen>
-    <dimen name="dialog_message_txt">24sp</dimen>
-    <dimen name="dialog_btn_txt">20sp</dimen>
-
 </resources>

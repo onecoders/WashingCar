@@ -29,44 +29,28 @@
             android:layout_gravity="bottom"
             android:background="@drawable/home_botnav_bj"
             android:gravity="center_vertical"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:paddingBottom="5dip"
+            android:paddingTop="5dip" >
 
             <RadioButton
                 android:id="@+id/main_tab_recommend"
-                android:layout_width="0.0dip"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:button="@null"
+                style="@style/BotNavTab"
                 android:checked="true"
                 android:drawableTop="@drawable/icon_recommend"
-                android:gravity="center"
-                android:text="@string/tab_title_recommend"
-                android:textColor="@drawable/botnav_text_color"
-                android:textSize="14.0sp" />
+                android:text="@string/tab_title_recommend" />
 
             <RadioButton
                 android:id="@+id/main_tab_nearby"
-                android:layout_width="0.0dip"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:button="@null"
+                style="@style/BotNavTab"
                 android:drawableTop="@drawable/icon_nearby"
-                android:gravity="center"
-                android:text="@string/tab_title_nearby"
-                android:textColor="@drawable/botnav_text_color"
-                android:textSize="14.0sp" />
+                android:text="@string/tab_title_nearby" />
 
             <RadioButton
                 android:id="@+id/main_tab_me"
-                android:layout_width="0.0dip"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:button="@null"
+                style="@style/BotNavTab"
                 android:drawableTop="@drawable/icon_me"
-                android:gravity="center"
-                android:text="@string/tab_title_me"
-                android:textColor="@drawable/botnav_text_color"
-                android:textSize="14.0sp" />
+                android:text="@string/tab_title_me" />
         </RadioGroup>
     </LinearLayout>
 

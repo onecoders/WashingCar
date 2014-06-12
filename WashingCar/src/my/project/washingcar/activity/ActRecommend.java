@@ -2,7 +2,6 @@ package my.project.washingcar.activity;
 
 import my.project.washingcar.R;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 
@@ -20,8 +19,7 @@ public class ActRecommend extends ActBase implements OnClickListener {
 	}
 
 	private void initAbView() {
-		View abView = LayoutInflater.from(this)
-				.inflate(R.layout.ab_index, null);
+		View abView = findViewById(R.id.header_recommend);
 		abView.findViewById(R.id.area).setOnClickListener(this);
 		abView.findViewById(R.id.map).setOnClickListener(this);
 		abView.findViewById(R.id.search).setOnClickListener(this);

@@ -4,18 +4,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <!-- new alert dialog -->
-    <dimen name="dialog_title_margin_top">20dip</dimen>
-    <dimen name="dialog_message_margin">5dip</dimen>
-    <dimen name="dialog_message_padding">10dip</dimen>
-    <dimen name="dialog_btn_container_margin">10dip</dimen>
-    <dimen name="dialog_btn_margin">5dip</dimen>
-
-    <!-- text size -->
-    <dimen name="ab_title_txt">20sp</dimen>
-    <dimen name="ab_btn_txt">13sp</dimen>
-    <dimen name="dialog_title_txt">22sp</dimen>
-    <dimen name="dialog_message_txt">18sp</dimen>
-    <dimen name="dialog_btn_txt">15sp</dimen>
+    <!-- Default height of an action bar. -->
+    <dimen name="action_bar_default_height">48dip</dimen>
 
 </resources>

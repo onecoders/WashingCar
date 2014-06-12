@@ -41,7 +41,8 @@
         </activity>
         <activity
             android:name=".activity.ActMain"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
             android:name=".activity.ActRecommend"
             android:screenOrientation="portrait" />

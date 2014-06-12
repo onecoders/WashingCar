@@ -62,7 +62,6 @@ public class ActMain extends TabActivity {
 		Intent intent = new Intent().setClass(this, cls);
 		TabSpec tabSpec = tabHost.newTabSpec(getString(tagId))
 				.setIndicator(getString(titleId)).setContent(intent);
-		// add tab
 		tabHost.addTab(tabSpec);
 	}
 
