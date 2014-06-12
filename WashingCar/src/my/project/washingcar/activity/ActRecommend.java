@@ -26,6 +26,7 @@ public class ActRecommend extends ActBase implements OnClickListener {
 	private void init() {
 		initAbView();
 		initViews();
+		loadContent();
 	}
 
 	private void initAbView() {
@@ -38,12 +39,6 @@ public class ActRecommend extends ActBase implements OnClickListener {
 	private void initViews() {
 		recommendShops = (ListView) findViewById(R.id.recommend_shops);
 		shopBrieves = new ArrayList<ShopBrief>();
-	}
-
-	@Override
-	protected void onResume() {
-		super.onResume();
-		loadContent();
 	}
 
 	private void loadContent() {
