@@ -9,9 +9,12 @@ import my.project.washingcar.model.ShopBrief;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
-public class ActRecommend extends ActBase implements OnClickListener {
+public class ActRecommend extends ActBase implements OnClickListener,
+		OnItemClickListener {
 
 	private ListView recommendShops;
 	private List<ShopBrief> shopBrieves;
@@ -37,8 +40,14 @@ public class ActRecommend extends ActBase implements OnClickListener {
 	}
 
 	private void initViews() {
-		recommendShops = (ListView) findViewById(R.id.recommend_shops);
 		shopBrieves = new ArrayList<ShopBrief>();
+		recommendShops = (ListView) findViewById(R.id.recommend_shops);
+		recommendShops.setOnItemClickListener(this);
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+		switchActivity(ActShopDetail.class, null);
 	}
 
 	private void loadContent() {

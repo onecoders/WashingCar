@@ -9,9 +9,12 @@ import my.project.washingcar.model.ShopBrief;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
-public class ActNearBy extends ActBase implements OnClickListener {
+public class ActNearBy extends ActBase implements OnClickListener,
+		OnItemClickListener {
 
 	private ListView nearbyShops;
 	private List<ShopBrief> shopBrieves;
@@ -37,8 +40,14 @@ public class ActNearBy extends ActBase implements OnClickListener {
 	}
 
 	private void initViews() {
-		nearbyShops = (ListView) findViewById(R.id.nearby_shops);
 		shopBrieves = new ArrayList<ShopBrief>();
+		nearbyShops = (ListView) findViewById(R.id.nearby_shops);
+		nearbyShops.setOnItemClickListener(this);
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+		switchActivity(ActShopDetail.class, null);
 	}
 
 	private void loadContent() {

@@ -52,6 +52,10 @@
         <activity
             android:name=".activity.ActMe"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ActShopDetail"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Sherlock.Light.NoActionBar" />
     </application>
 
 </manifest>
