@@ -7,9 +7,165 @@
     android:orientation="vertical" >
 
     <include
-        android:id="@+id/header_recommend"
+        android:id="@+id/header_detail"
         android:layout_width="match_parent"
         android:layout_height="@dimen/action_bar_default_height"
         layout="@layout/ab_shop_detail" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/detail_photo"
+                android:layout_width="match_parent"
+                android:layout_height="180dip" >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/contentDescription"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/cswd_image" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/contentDescription"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/detail_photo_bj" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dip"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:text="点击查看相册"
+                    android:textColor="#ffffff"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/current_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:text="12"
+                    android:textColor="#35a4f4"
+                    android:textSize="21sp" />
+
+                <TextView
+                    android:id="@+id/rmb_yuan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/current_price"
+                    android:text="元"
+                    android:textColor="#a4a4a4"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/original_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dip"
+                    android:layout_toRightOf="@id/rmb_yuan"
+                    android:text="40元"
+                    android:textColor="#b6b6b6"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/buy_now"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dip"
+                    android:background="@drawable/sel_detail_button_orange"
+                    android:text="立即抢购"
+                    android:textColor="#ffffff"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/sold_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8dip"
+                    android:layout_toLeftOf="@id/buy_now"
+                    android:text="8099"
+                    android:textColor="#a4a4a4"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/sold_count"
+                    android:text="已售"
+                    android:textColor="#a4a4a4"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dip"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/detail_box_up_bj" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dip"
+                        android:text="新北万达洗车广场"
+                        android:textColor="#444444"
+                        android:textSize="16sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/detail_box_mid_bj" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dip"
+                        android:text="[不限次数]万达洗车一次购买，一年内不限次数，一卡通式服务，放心体验"
+                        android:textColor="#a5a5a5"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/detail_box_footer_bj" >
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

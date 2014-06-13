@@ -5,11 +5,14 @@
     android:background="@color/ab_bg" >
 
     <LinearLayout
+        android:id="@+id/detail_back"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:layout_marginLeft="10dip"
+        android:clickable="true"
+        android:descendantFocusability="blocksDescendants"
         android:orientation="horizontal" >
 
         <ImageView
@@ -19,7 +22,7 @@
             android:src="@drawable/sel_topnav_icon_back" />
 
         <ImageView
-            android:id="@+id/me_logo"
+            android:id="@+id/detail_logo"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:contentDescription="@string/contentDescription"
@@ -27,7 +30,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/nearby_title"
+        android:id="@+id/detail_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -36,6 +39,7 @@
         android:textSize="20sp" />
 
     <ImageView
+        android:id="@+id/detail_star"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_alignParentRight="true"
