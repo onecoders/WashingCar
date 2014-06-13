@@ -1,9 +1,14 @@
 package my.project.washingcar.activity;
 
 import my.project.washingcar.R;
+import android.app.AlertDialog;
 import android.app.TabActivity;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.Window;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TabHost;
@@ -63,6 +68,40 @@ public class ActMain extends TabActivity {
 		TabSpec tabSpec = tabHost.newTabSpec(getString(tagId))
 				.setIndicator(getString(titleId)).setContent(intent);
 		tabHost.addTab(tabSpec);
+	}
+
+	@Override
+	public boolean dispatchKeyEvent(KeyEvent event) {
+		if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
+			if (event.getAction() == KeyEvent.ACTION_DOWN
+					&& event.getRepeatCount() == 0) {
+				showExitDialog();
+			}
+			return true;
+		}
+		return super.dispatchKeyEvent(event);
+	}
+
+	private void showExitDialog() {
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage(R.string.exit_hint);
+		builder.setPositiveButton(R.string.exit, new OnClickListener() {
+
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				exit();
+			}
+
+		});
+		builder.setNegativeButton(R.string.cancel, null);
+		AlertDialog dialog = builder.create();
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		dialog.show();
+	}
+
+	private void exit() {
+		finish();
+		System.exit(0);
 	}
 
 }

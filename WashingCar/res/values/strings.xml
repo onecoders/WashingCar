@@ -8,6 +8,9 @@
     <string name="tab_title_recommend">推荐</string>
     <string name="tab_title_nearby">附近商家</string>
     <string name="tab_title_me">我</string>
+    <string name="exit_hint">确定退出去洗车应用？</string>
+    <string name="cancel">取消</string>
+    <string name="exit">退出</string>
     <!-- modify if new version -->
     <string name="default_version_name">1.0.0</string>
     <!-- data load and net -->

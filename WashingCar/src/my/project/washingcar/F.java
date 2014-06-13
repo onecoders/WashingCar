@@ -2,6 +2,7 @@ package my.project.washingcar;
 
 import java.lang.reflect.Type;
 
+import my.project.washingcar.utils.L;
 import my.project.washingcar.utils.VersionUtil;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -30,6 +31,7 @@ public class F {
 	private static Gson mGson;
 
 	public static void init(Context context) {
+		L.enableLogging();//
 		initPrefAndGson(context);
 		initVersionInfo(context);
 		initRequestQueue(context);
