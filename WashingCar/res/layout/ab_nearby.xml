@@ -21,7 +21,8 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="10dp"
         android:layout_toRightOf="@id/nearby_logo"
-        android:background="@drawable/sel_topnav_icon_arrow"
+        android:drawablePadding="8dip"
+        android:drawableRight="@drawable/sel_topnav_icon_arrow"
         android:text="最近距离"
         android:textColor="#ffffff"
         android:textSize="14sp" />
