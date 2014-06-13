@@ -14,9 +14,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class AdaShopBrief extends ArrayAdapter<ShopBrief> {
+public class AdaNearbyShopBrief extends ArrayAdapter<ShopBrief> {
 
-	public AdaShopBrief(Context context, List<ShopBrief> objects) {
+	public AdaNearbyShopBrief(Context context, List<ShopBrief> objects) {
 		super(context, 0, objects);
 	}
 
@@ -25,7 +25,7 @@ public class AdaShopBrief extends ArrayAdapter<ShopBrief> {
 		ViewHolder holder;
 		if (convertView == null) {
 			convertView = LayoutInflater.from(getContext()).inflate(
-					R.layout.item_brief, null);
+					R.layout.item_nearby_shop_brief, null);
 			holder = new ViewHolder(convertView);
 			convertView.setTag(holder);
 		} else {
@@ -39,6 +39,7 @@ public class AdaShopBrief extends ArrayAdapter<ShopBrief> {
 	private final class ViewHolder {
 		ImageView image;
 		TextView name;
+		TextView distance;
 		TextView synopsis;
 		TextView currentPrice;
 		TextView originalPrice;
@@ -47,6 +48,7 @@ public class AdaShopBrief extends ArrayAdapter<ShopBrief> {
 		public ViewHolder(View convertView) {
 			image = (ImageView) convertView.findViewById(R.id.image);
 			name = (TextView) convertView.findViewById(R.id.name);
+			distance = (TextView) convertView.findViewById(R.id.distance);
 			synopsis = (TextView) convertView.findViewById(R.id.synopsis);
 			currentPrice = (TextView) convertView
 					.findViewById(R.id.current_price);
@@ -58,11 +60,12 @@ public class AdaShopBrief extends ArrayAdapter<ShopBrief> {
 
 		public void setContent(ShopBrief shopBrief) {
 			ImageUtil.display(getContext(), shopBrief.getImage(), this.image);
-			this.name.setText(shopBrief.getName());
-			this.synopsis.setText(shopBrief.getSynopsis());
-			this.currentPrice.setText(shopBrief.getCurrentPrice());
-			this.originalPrice.setText(shopBrief.getOriginalPrice());
-			this.soldCount.setText(shopBrief.getSoldCount());
+			name.setText(shopBrief.getName());
+			distance.setText(shopBrief.getDistance());
+			synopsis.setText(shopBrief.getSynopsis());
+			currentPrice.setText(shopBrief.getCurrentPrice());
+			originalPrice.setText(shopBrief.getOriginalPrice());
+			soldCount.setText(shopBrief.getSoldCount());
 		}
 
 	}

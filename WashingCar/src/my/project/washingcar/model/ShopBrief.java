@@ -4,11 +4,12 @@ public class ShopBrief {
 
 	private String image;
 	private String name;
+	private String distance;
 	private String synopsis;
 	private String currentPrice;
 	private String originalPrice;
 	private int soldCount;
-	private int flag;
+	private int flag;// 0否 1热 2折
 
 	public String getImage() {
 		return image;
@@ -24,6 +25,14 @@ public class ShopBrief {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getDistance() {
+		return distance;
+	}
+
+	public void setDistance(String distance) {
+		this.distance = distance;
 	}
 
 	public String getSynopsis() {

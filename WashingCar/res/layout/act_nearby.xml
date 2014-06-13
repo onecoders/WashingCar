@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F0F0ED"
     android:orientation="vertical" >
 
     <include
@@ -9,5 +10,17 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/action_bar_default_height"
         layout="@layout/ab_nearby" />
+
+    <ListView
+        android:id="@+id/nearby_shops"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1.0"
+        android:divider="@null"
+        android:dividerHeight="0.0px"
+        android:fadingEdgeLength="0dip"
+        android:listSelector="@android:color/transparent"
+        android:scrollbars="none" >
+    </ListView>
 
 </LinearLayout>

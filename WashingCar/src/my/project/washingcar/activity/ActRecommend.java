@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import my.project.washingcar.R;
-import my.project.washingcar.adapter.AdaShopBrief;
+import my.project.washingcar.adapter.AdaRecommendShopBrief;
 import my.project.washingcar.model.ShopBrief;
 import android.os.Bundle;
 import android.view.View;
@@ -45,7 +45,7 @@ public class ActRecommend extends ActBase implements OnClickListener {
 		for (int i = 0; i < 10; i++) {
 			shopBrieves.add(new ShopBrief());
 		}
-		recommendShops.setAdapter(new AdaShopBrief(this, shopBrieves));
+		recommendShops.setAdapter(new AdaRecommendShopBrief(this, shopBrieves));
 	}
 
 	@Override
