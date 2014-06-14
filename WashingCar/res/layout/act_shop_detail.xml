@@ -270,12 +270,20 @@
                         android:text="图文详情"
                         android:textColor="#444444"
                         android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:contentDescription="@string/contentDescription"
+                        android:src="@drawable/detail_line_shi" />
                 </RelativeLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/detail_box_mid_bj"
+                    android:background="@drawable/detail_box_bg"
                     android:gravity="center_vertical"
                     android:orientation="vertical"
                     android:padding="10dip" >
@@ -283,20 +291,12 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dip"
                         android:layout_marginLeft="10dip"
                         android:layout_marginRight="10dip"
                         android:text="[不限次数]万达洗车一次购买，一年内不限次数，一卡通式服务，放心体验\n位于常州市新北区万达广场，这里交通方便，环境优良。是不可多得的娱乐休闲场所。"
                         android:textColor="#a5a5a5"
                         android:textSize="13sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/detail_box_footer_bj"
-                    android:gravity="center_vertical"
-                    android:orientation="vertical"
-                    android:padding="10dip" >
 
                     <ImageView
                         android:layout_width="match_parent"

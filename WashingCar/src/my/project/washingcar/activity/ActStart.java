@@ -7,7 +7,7 @@ import android.view.View;
 
 public class ActStart extends ActBase {
 
-	private static final long DELAY_MILLIS = 1 * 1000;
+	private static final long DELAY_MILLIS = 3 * 1000;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,7 @@ public class ActStart extends ActBase {
 
 	private void setBackground() {
 		View startPage = findViewById(R.id.start_page);
-		// startPage.setBackgroundResource(bgResId);
+		startPage.setBackgroundResource(R.drawable.start_image);
 	}
 
 	private void delayAndSwitch2Main() {
