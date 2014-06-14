@@ -82,7 +82,7 @@ public class ActMain extends TabActivity {
 		return super.dispatchKeyEvent(event);
 	}
 
-	private void showExitDialog() {
+	public void showExitDialog() {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setMessage(R.string.exit_hint);
 		builder.setPositiveButton(R.string.exit, new OnClickListener() {

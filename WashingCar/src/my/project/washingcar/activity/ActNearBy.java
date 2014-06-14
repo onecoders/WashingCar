@@ -34,6 +34,7 @@ public class ActNearBy extends ActBase implements OnClickListener,
 
 	private void initAbView() {
 		View abView = findViewById(R.id.header_nearby);
+		abView.findViewById(R.id.nearby_back).setOnClickListener(this);
 		abView.findViewById(R.id.nearby_category).setOnClickListener(this);
 		abView.findViewById(R.id.nearby_map).setOnClickListener(this);
 		abView.findViewById(R.id.nearby_search).setOnClickListener(this);
@@ -60,6 +61,9 @@ public class ActNearBy extends ActBase implements OnClickListener,
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
+		case R.id.nearby_back:
+			((ActMain) getParent()).showExitDialog();
+			break;
 		case R.id.nearby_category:
 
 			break;

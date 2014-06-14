@@ -28,7 +28,7 @@ public class ActShopDetail extends ActBase implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.detail_back:
-
+			onBackPressed();
 			break;
 		case R.id.detail_star:
 

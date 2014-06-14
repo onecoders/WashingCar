@@ -34,6 +34,7 @@ public class ActRecommend extends ActBase implements OnClickListener,
 
 	private void initAbView() {
 		View abView = findViewById(R.id.header_recommend);
+		abView.findViewById(R.id.recommend_back).setOnClickListener(this);
 		abView.findViewById(R.id.recommend_area).setOnClickListener(this);
 		abView.findViewById(R.id.recommend_map).setOnClickListener(this);
 		abView.findViewById(R.id.recommend_search).setOnClickListener(this);
@@ -60,6 +61,9 @@ public class ActRecommend extends ActBase implements OnClickListener,
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
+		case R.id.recommend_back:
+			((ActMain) getParent()).showExitDialog();
+			break;
 		case R.id.recommend_area:
 
 			break;

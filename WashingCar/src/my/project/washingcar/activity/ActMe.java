@@ -15,12 +15,24 @@ public class ActMe extends ActBase implements OnClickListener {
 	}
 
 	private void init() {
+		initAbView();
+	}
 
+	private void initAbView() {
+		View abView = findViewById(R.id.header_me);
+		abView.findViewById(R.id.me_back).setOnClickListener(this);
 	}
 
 	@Override
 	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.me_back:
+			((ActMain) getParent()).showExitDialog();
+			break;
 
+		default:
+			break;
+		}
 	}
 
 }
