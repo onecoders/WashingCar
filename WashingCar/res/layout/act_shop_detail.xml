@@ -29,6 +29,7 @@
                 android:layout_height="180dip" >
 
                 <ImageView
+                    android:id="@+id/detail_image_show_frame"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:contentDescription="@string/contentDescription"
@@ -61,7 +62,7 @@
                 android:padding="10dip" >
 
                 <TextView
-                    android:id="@+id/current_price"
+                    android:id="@+id/detail_current_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
@@ -76,13 +77,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/current_price"
+                    android:layout_toRightOf="@id/detail_current_price"
                     android:text="元"
                     android:textColor="#a4a4a4"
                     android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/original_price"
+                    android:id="@+id/detail_original_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -93,7 +94,7 @@
                     android:textSize="14sp" />
 
                 <Button
-                    android:id="@+id/buy_now"
+                    android:id="@+id/detail_btn_buy_now"
                     android:layout_width="wrap_content"
                     android:layout_height="35dip"
                     android:layout_alignParentRight="true"
@@ -105,12 +106,12 @@
                     android:textSize="15sp" />
 
                 <TextView
-                    android:id="@+id/sold_count"
+                    android:id="@+id/detail_sold_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="8dip"
-                    android:layout_toLeftOf="@id/buy_now"
+                    android:layout_toLeftOf="@id/detail_btn_buy_now"
                     android:text="8099"
                     android:textColor="#a4a4a4"
                     android:textSize="14sp" />
@@ -119,7 +120,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@id/sold_count"
+                    android:layout_toLeftOf="@id/detail_sold_count"
                     android:text="已售"
                     android:textColor="#a4a4a4"
                     android:textSize="14sp" />
@@ -139,6 +140,7 @@
                     android:background="@drawable/detail_box_up_bj" >
 
                     <TextView
+                        android:id="@+id/detail_intro_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
@@ -155,6 +157,7 @@
                     android:background="@drawable/detail_box_mid_bj" >
 
                     <TextView
+                        android:id="@+id/detail_intro_content"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
@@ -193,6 +196,7 @@
                                 android:textSize="12sp" />
 
                             <TextView
+                                android:id="@+id/detail_phone_num"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="0519-88888888"
@@ -215,6 +219,7 @@
                                 android:textSize="12sp" />
 
                             <TextView
+                                android:id="@+id/detail_work_period"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="08:00-21:00"
@@ -237,6 +242,7 @@
                             android:textSize="12sp" />
 
                         <TextView
+                            android:id="@+id/detail_address"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="常州市新北区万达广场A座1202"
@@ -251,7 +257,6 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dip"
                 android:layout_marginLeft="10dip"
                 android:layout_marginRight="10dip"
                 android:orientation="vertical" >
@@ -289,6 +294,7 @@
                     android:padding="10dip" >
 
                     <TextView
+                        android:id="@+id/detail_content"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dip"
@@ -299,6 +305,7 @@
                         android:textSize="13sp" />
 
                     <ImageView
+                        android:id="@+id/detail_image"
                         android:layout_width="match_parent"
                         android:layout_height="180dip"
                         android:contentDescription="@string/contentDescription"
@@ -307,13 +314,28 @@
                 </LinearLayout>
             </LinearLayout>
 
+            <!-- 本店推荐 -->
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dip"
+                android:layout_marginTop="10dip"
                 android:text="本店推荐"
                 android:textColor="#6b6b6b"
                 android:textSize="14sp" />
+
+            <my.project.washingcar.view.NoScrollGridView
+                android:id="@+id/goods_recommend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dip"
+                android:horizontalSpacing="5dip"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="2"
+                android:scrollbars="none"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="5dip" />
         </LinearLayout>
     </ScrollView>
 
