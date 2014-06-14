@@ -7,7 +7,7 @@ import android.view.View;
 
 public class ActStart extends ActBase {
 
-	private static final long DELAY_MILLIS = 3 * 1000;
+	private static final long DELAY_MILLIS = 1 * 1000;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
