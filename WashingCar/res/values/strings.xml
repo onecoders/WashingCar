@@ -11,6 +11,9 @@
     <string name="exit_hint">确定退出车优惠应用？</string>
     <string name="cancel">取消</string>
     <string name="exit">退出</string>
+    <string name="header_title_me">我</string>
+    <string name="header_title_location">定位</string>
+    <string name="header_title_detail">商家详情</string>
     <!-- modify if new version -->
     <string name="default_version_name">1.0.0</string>
     <!-- data load and net -->

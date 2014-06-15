@@ -6,11 +6,10 @@
     android:background="@color/main_bg"
     android:orientation="vertical" >
 
-    <include
+    <my.project.washingcar.view.HeaderView
         android:id="@+id/header_me"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/action_bar_default_height"
-        layout="@layout/ab_me" />
+        android:layout_height="@dimen/action_bar_default_height" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -34,7 +33,7 @@
                     android:background="@drawable/me_photo_bj" >
 
                     <com.meg7.widget.CustomShapeImageView
-                        android:id="@+id/avatar"
+                        android:id="@+id/me_avatar"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_centerInParent="true"
@@ -44,7 +43,7 @@
                 </RelativeLayout>
 
                 <TextView
-                    android:id="@+id/user_name"
+                    android:id="@+id/me_user_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dip"
@@ -80,7 +79,7 @@
                 <!-- 待付款 -->
 
                 <RelativeLayout
-                    android:id="@+id/ready_pay"
+                    android:id="@+id/me_ready_pay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/sel_me_box_mid_bj"
@@ -110,7 +109,7 @@
                 <!-- 已付款 -->
 
                 <RelativeLayout
-                    android:id="@+id/already_pay"
+                    android:id="@+id/me_already_pay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/sel_me_box_mid_bj"
@@ -140,7 +139,7 @@
                 <!-- 未使用 -->
 
                 <RelativeLayout
-                    android:id="@+id/not_used"
+                    android:id="@+id/me_not_used"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/sel_me_box_footer_bj"
@@ -196,7 +195,7 @@
                 <!-- 我的收藏 -->
 
                 <RelativeLayout
-                    android:id="@+id/my_collection"
+                    android:id="@+id/me_my_collection"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/sel_me_box_mid_bj"
@@ -226,7 +225,7 @@
                 <!-- 切换帐号 -->
 
                 <RelativeLayout
-                    android:id="@+id/switch_account"
+                    android:id="@+id/me_switch_account"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/sel_me_box_mid_bj"
@@ -256,7 +255,7 @@
                 <!-- 关于去洗车 -->
 
                 <RelativeLayout
-                    android:id="@+id/about_app"
+                    android:id="@+id/me_about_app"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/sel_me_box_footer_bj"
@@ -285,11 +284,12 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/me_btn_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dip"
                 android:background="@drawable/sel_me_button_red"
-                android:text="退出登录"
+                android:text="点击登录"
                 android:textColor="#ffffff"
                 android:textSize="18sp" />
         </LinearLayout>

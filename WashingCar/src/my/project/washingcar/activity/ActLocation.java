@@ -1,6 +1,7 @@
 package my.project.washingcar.activity;
 
 import my.project.washingcar.R;
+import my.project.washingcar.view.HeaderView;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -44,8 +45,9 @@ public class ActLocation extends ActBase implements OnClickListener,
 	}
 
 	private void initAbView() {
-		View abView = findViewById(R.id.header_location);
-		abView.findViewById(R.id.location_back).setOnClickListener(this);
+		HeaderView header = (HeaderView) findViewById(R.id.header_location);
+		header.setTitle(R.string.header_title_location);
+		header.setOnBackListener(this);
 	}
 
 	private void initBaiduMapView() {
@@ -127,7 +129,7 @@ public class ActLocation extends ActBase implements OnClickListener,
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.location_back:
+		case R.id.back:
 			onBackPressed();
 			break;
 		default:
