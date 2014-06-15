@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:textColor="#35a4f4"
+        android:textColor="@drawable/child_area_text_color"
         android:textSize="14sp" />
 
 </RelativeLayout>
