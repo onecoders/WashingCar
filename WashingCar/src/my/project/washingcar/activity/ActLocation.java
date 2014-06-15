@@ -2,6 +2,8 @@ package my.project.washingcar.activity;
 
 import my.project.washingcar.R;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
@@ -18,23 +20,35 @@ import com.baidu.mapapi.map.MyLocationConfigeration.LocationMode;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
 
-public class ActLocation extends ActBase {
+public class ActLocation extends ActBase implements OnClickListener,
+		BDLocationListener {
 
 	// 定位相关
 	LocationClient mLocClient;
-	public MyLocationListenner myListener = new MyLocationListenner();
 
 	MapView mMapView;
 	BaiduMap mBaiduMap;
 
 	boolean isFirstLoc = true;// 是否首次定位
 
-	// UI
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.act_location);
+		init();
+	}
+
+	private void init() {
+		initAbView();
+		initBaiduMapView();
+	}
+
+	private void initAbView() {
+		View abView = findViewById(R.id.header_location);
+		abView.findViewById(R.id.location_back).setOnClickListener(this);
+	}
+
+	private void initBaiduMapView() {
 		// 地图初始化
 		mMapView = (MapView) findViewById(R.id.bmapView);
 		mBaiduMap = mMapView.getMap();
@@ -42,7 +56,7 @@ public class ActLocation extends ActBase {
 		mBaiduMap.setMyLocationEnabled(true);
 		// 定位初始化
 		mLocClient = new LocationClient(this);
-		mLocClient.registerLocationListener(myListener);
+		mLocClient.registerLocationListener(this);
 		LocationClientOption option = new LocationClientOption();
 		option.setOpenGps(true);// 打开gps
 		option.setCoorType("bd09ll"); // 设置坐标类型
@@ -61,31 +75,29 @@ public class ActLocation extends ActBase {
 	/**
 	 * 定位SDK监听函数
 	 */
-	public class MyLocationListenner implements BDLocationListener {
-
-		@Override
-		public void onReceiveLocation(BDLocation location) {
-			// map view 销毁后不在处理新接收的位置
-			if (location == null || mMapView == null)
-				return;
-			MyLocationData locData = new MyLocationData.Builder()
-					.accuracy(location.getRadius())
-					// 此处设置开发者获取到的方向信息，顺时针0-360
-					.direction(100).latitude(location.getLatitude())
-					.longitude(location.getLongitude()).build();
-			mBaiduMap.setMyLocationData(locData);
-			if (isFirstLoc) {
-				isFirstLoc = false;
-				LatLng ll = new LatLng(location.getLatitude(),
-						location.getLongitude());
-				MapStatusUpdate u = MapStatusUpdateFactory.newLatLng(ll);
-				mBaiduMap.animateMapStatus(u);
-			}
+	@Override
+	public void onReceiveLocation(BDLocation location) {
+		// map view 销毁后不在处理新接收的位置
+		if (location == null || mMapView == null)
+			return;
+		MyLocationData locData = new MyLocationData.Builder()
+				.accuracy(location.getRadius())
+				// 此处设置开发者获取到的方向信息，顺时针0-360
+				.direction(100).latitude(location.getLatitude())
+				.longitude(location.getLongitude()).build();
+		mBaiduMap.setMyLocationData(locData);
+		if (isFirstLoc) {
+			isFirstLoc = false;
+			LatLng ll = new LatLng(location.getLatitude(),
+					location.getLongitude());
+			MapStatusUpdate u = MapStatusUpdateFactory.newLatLng(ll);
+			mBaiduMap.animateMapStatus(u);
 		}
+	}
 
-		public void onReceivePoi(BDLocation poiLocation) {
+	@Override
+	public void onReceivePoi(BDLocation arg0) {
 
-		}
 	}
 
 	@Override
@@ -102,7 +114,7 @@ public class ActLocation extends ActBase {
 
 	@Override
 	protected void onDestroy() {
-		mLocClient.unRegisterLocationListener(myListener);
+		mLocClient.unRegisterLocationListener(this);
 		// 退出时销毁定位
 		mLocClient.stop();
 		// 关闭定位图层
@@ -110,6 +122,17 @@ public class ActLocation extends ActBase {
 		mMapView.onDestroy();
 		mMapView = null;
 		super.onDestroy();
+	}
+
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.location_back:
+			onBackPressed();
+			break;
+		default:
+			break;
+		}
 	}
 
 }
