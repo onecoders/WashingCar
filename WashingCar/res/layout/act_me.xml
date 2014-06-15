@@ -9,7 +9,8 @@
     <my.project.washingcar.view.HeaderView
         android:id="@+id/header_me"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/action_bar_default_height" />
+        android:layout_height="@dimen/action_bar_default_height"
+        app:title_name="@string/header_title_me" />
 
     <ScrollView
         android:layout_width="match_parent"

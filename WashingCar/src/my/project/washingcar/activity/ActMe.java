@@ -33,7 +33,6 @@ public class ActMe extends ActBase implements OnClickListener {
 
 	private void initAbView() {
 		HeaderView header = (HeaderView) findViewById(R.id.header_me);
-		header.setTitle(R.string.header_title_me);
 		header.setOnBackListener(this);
 	}
 

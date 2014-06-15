@@ -46,7 +46,6 @@ public class ActLocation extends ActBase implements OnClickListener,
 
 	private void initAbView() {
 		HeaderView header = (HeaderView) findViewById(R.id.header_location);
-		header.setTitle(R.string.header_title_location);
 		header.setOnBackListener(this);
 	}
 

@@ -31,7 +31,6 @@ public class ActRegister extends ActBase implements OnClickListener {
 
 	private void initAbView() {
 		HeaderView header = (HeaderView) findViewById(R.id.header_register);
-		header.setTitle(R.string.header_title_register);
 		header.setOnBackListener(this);
 	}
 

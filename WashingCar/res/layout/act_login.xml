@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_bg"
@@ -8,7 +9,8 @@
     <my.project.washingcar.view.HeaderView
         android:id="@+id/header_login"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/action_bar_default_height" />
+        android:layout_height="@dimen/action_bar_default_height"
+        app:title_name="@string/header_title_login" />
 
     <EditText
         android:id="@+id/login_phone_num"
@@ -78,9 +80,9 @@
 
         <TextView
             android:id="@+id/login_clause"
-            android:layout_marginLeft="2dip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="2dip"
             android:text="服务条款"
             android:textColor="#35a4f4"
             android:textSize="13sp" />

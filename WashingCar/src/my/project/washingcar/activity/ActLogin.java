@@ -31,7 +31,6 @@ public class ActLogin extends ActBase implements OnClickListener {
 
 	private void initAbView() {
 		HeaderView header = (HeaderView) findViewById(R.id.header_login);
-		header.setTitle(R.string.header_title_login);
 		header.setOnBackListener(this);
 	}
 
