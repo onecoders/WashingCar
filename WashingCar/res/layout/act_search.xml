@@ -19,6 +19,7 @@
         android:padding="8dip" >
 
         <EditText
+            android:id="@+id/search_key_words"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1.0"
@@ -29,12 +30,13 @@
             android:textSize="14sp" />
 
         <TextView
+            android:id="@+id/search_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dip"
             android:layout_marginRight="5dip"
             android:text="取消"
-            android:textColor="#6b6b6b"
+            android:textColor="@drawable/child_area_text_color"
             android:textSize="15sp"
             android:visibility="gone" />
     </LinearLayout>
@@ -49,12 +51,25 @@
         android:id="@+id/search_category_area"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dip"
+        android:layout_margin="8dip"
         android:horizontalSpacing="8dip"
         android:listSelector="@android:color/transparent"
         android:numColumns="3"
         android:scrollbars="none"
         android:stretchMode="columnWidth"
         android:verticalSpacing="10dip" />
+
+    <ListView
+        android:id="@+id/search_result_shops"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1.0"
+        android:divider="@null"
+        android:dividerHeight="0.0px"
+        android:fadingEdgeLength="0dip"
+        android:listSelector="@android:color/transparent"
+        android:scrollbars="none"
+        android:visibility="gone" >
+    </ListView>
 
 </LinearLayout>

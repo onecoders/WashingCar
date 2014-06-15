@@ -83,7 +83,7 @@ public class ActNearBy extends ActBase implements OnClickListener,
 			switchActivity(ActLocation.class, null);
 			break;
 		case R.id.nearby_search:
-
+			switchActivity(ActSearch.class, null);
 			break;
 		default:
 			break;
