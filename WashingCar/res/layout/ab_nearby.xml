@@ -37,7 +37,6 @@
         android:layout_toRightOf="@id/nearby_back"
         android:drawablePadding="8dip"
         android:drawableRight="@drawable/sel_topnav_icon_arrow"
-        android:text="最近距离"
         android:textColor="#ffffff"
         android:textSize="14sp" />
 

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:id="@+id/nearby_choose_nearest"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:background="@drawable/sel_zhankai1_nearby_line_bj"
+        android:clickable="true"
+        android:descendantFocusability="blocksDescendants" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="最近距离"
+            android:textColor="@drawable/nearby_choose_text_color" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/nearby_choose_hotest"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:background="@drawable/sel_zhankai1_nearby_line_bj"
+        android:clickable="true"
+        android:descendantFocusability="blocksDescendants" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="最热门店"
+            android:textColor="@drawable/nearby_choose_text_color" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/nearby_choose_highest_discount"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:background="@drawable/sel_zhankai1_nearby_line_bj"
+        android:clickable="true"
+        android:descendantFocusability="blocksDescendants" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="最高折扣"
+            android:textColor="@drawable/nearby_choose_text_color" />
+    </RelativeLayout>
+
+</LinearLayout>

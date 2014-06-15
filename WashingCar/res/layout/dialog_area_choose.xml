@@ -7,7 +7,7 @@
     android:padding="10dip" >
 
     <RelativeLayout
-        android:id="@+id/area_switch_city"
+        android:id="@+id/area_choose_switch_city"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/sel_zhankai_box1_bj"
@@ -15,7 +15,7 @@
         android:descendantFocusability="blocksDescendants" >
 
         <TextView
-            android:id="@+id/area_current_city"
+            android:id="@+id/area_choose_current_city"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -27,11 +27,11 @@
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/area_city_name"
+            android:id="@+id/area_choose_city_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/area_current_city"
+            android:layout_toRightOf="@id/area_choose_current_city"
             android:text="常州"
             android:textColor="#6b6b6b"
             android:textSize="15sp" />
@@ -50,7 +50,7 @@
     </RelativeLayout>
 
     <my.project.washingcar.view.NoScrollGridView
-        android:id="@+id/area_child_grid"
+        android:id="@+id/area_choose_child_grid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dip"

@@ -8,17 +8,24 @@
     <!--  -->
     <string name="contentDescription"></string>
     <string name="hint_when_loading">请稍候&#8230;</string>
+    <!-- tab title -->
     <string name="tab_title_recommend">推荐</string>
     <string name="tab_title_nearby">附近商家</string>
     <string name="tab_title_me">我</string>
+    <!-- exit dialog -->
     <string name="exit_hint">确定退出车优惠应用？</string>
     <string name="cancel">取消</string>
     <string name="exit">退出</string>
+    <!-- header title -->
     <string name="header_title_me">我</string>
     <string name="header_title_location">定位</string>
     <string name="header_title_detail">商家详情</string>
     <string name="header_title_login">登录</string>
     <string name="header_title_register">注册</string>
+    <!-- nearby choose -->
+    <string name="nearby_choose_nearest">最近距离</string>
+    <string name="nearby_choose_hotest">最热门店</string>
+    <string name="nearby_choose_highest_discount">最高折扣</string>
     <!-- data load and net -->
     <string name="downloading">下载中&#8230;</string>
     <string name="network_ungelivable">网络不给力，请稍后重试！</string>

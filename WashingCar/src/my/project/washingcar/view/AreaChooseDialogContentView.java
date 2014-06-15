@@ -10,26 +10,26 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class AreaDialogContentView extends LinearLayout {
+public class AreaChooseDialogContentView extends LinearLayout {
 
 	private TextView cityName;
 	private RelativeLayout switchCity;
 	private NoScrollGridView childAreas;
 
-	public AreaDialogContentView(Context context) {
+	public AreaChooseDialogContentView(Context context) {
 		this(context, null);
 	}
 
-	public AreaDialogContentView(Context context, AttributeSet attrs) {
+	public AreaChooseDialogContentView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		inflate(context, R.layout.dialog_area_choose, this);
 		init();
 	}
 
 	private void init() {
-		cityName = (TextView) findViewById(R.id.area_city_name);
-		switchCity = (RelativeLayout) findViewById(R.id.area_switch_city);
-		childAreas = (NoScrollGridView) findViewById(R.id.area_child_grid);
+		cityName = (TextView) findViewById(R.id.area_choose_city_name);
+		switchCity = (RelativeLayout) findViewById(R.id.area_choose_switch_city);
+		childAreas = (NoScrollGridView) findViewById(R.id.area_choose_child_grid);
 	}
 
 	public void setCityName(String name) {
@@ -44,7 +44,7 @@ public class AreaDialogContentView extends LinearLayout {
 		childAreas.setAdapter(adapter);
 	}
 
-	public void setOnChildAreaGridS(OnItemClickListener listener) {
+	public void setOnChildAreaItemClickListener(OnItemClickListener listener) {
 		childAreas.setOnItemClickListener(listener);
 	}
 
