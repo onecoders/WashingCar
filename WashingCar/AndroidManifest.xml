@@ -73,6 +73,14 @@
             android:name=".activity.ActLocation"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Sherlock.Light.NoActionBar" />
+        <activity
+            android:name=".activity.ActLogin"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Sherlock.Light.NoActionBar" />
+        <activity
+            android:name=".activity.ActRegister"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Sherlock.Light.NoActionBar" />
 
         <service
             android:name="com.baidu.location.f"

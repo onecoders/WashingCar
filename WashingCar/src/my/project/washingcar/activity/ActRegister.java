@@ -10,17 +10,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class ActLogin extends ActBase implements OnClickListener {
+public class ActRegister extends ActBase implements OnClickListener {
 
-	private EditText phoneNum, validateCode;
+	private EditText userName, phoneNum, validateCode;
 	private Button btnGetCode;
 	private TextView clause;
-	private Button btnToLogin, btnToRegister;
+	private Button btnCommit;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.act_login);
+		setContentView(R.layout.act_register);
 		init();
 	}
 
@@ -30,15 +30,13 @@ public class ActLogin extends ActBase implements OnClickListener {
 	}
 
 	private void initAbView() {
-		HeaderView header = (HeaderView) findViewById(R.id.header_login);
-		header.setTitle(R.string.header_title_login);
+		HeaderView header = (HeaderView) findViewById(R.id.header_register);
+		header.setTitle(R.string.header_title_register);
 		header.setOnBackListener(this);
 	}
 
 	private void initView() {
-		btnToRegister = (Button) findViewById(R.id.login_btn_toregister);
-		btnToRegister.setOnClickListener(this);
-		clause = (TextView) findViewById(R.id.login_clause);
+		clause = (TextView) findViewById(R.id.register_clause);
 		clause.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);
 	}
 
@@ -47,9 +45,6 @@ public class ActLogin extends ActBase implements OnClickListener {
 		switch (v.getId()) {
 		case R.id.back:
 			onBackPressed();
-			break;
-		case R.id.login_btn_toregister:
-			switchActivity(ActRegister.class, null);
 			break;
 		default:
 			break;

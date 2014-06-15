@@ -49,7 +49,7 @@ public class ActMe extends ActBase implements OnClickListener {
 			((ActMain) getParent()).showExitDialog();
 			break;
 		case R.id.me_btn_login:
-
+			switchActivity(ActLogin.class, null);
 			break;
 		default:
 			break;

@@ -6,7 +6,6 @@ import java.util.List;
 import my.project.washingcar.R;
 import my.project.washingcar.adapter.AdaGoodsRecommend;
 import my.project.washingcar.model.GoodsRecommend;
-import my.project.washingcar.view.HeaderView;
 import my.project.washingcar.view.NoScrollGridView;
 import android.graphics.Paint;
 import android.os.Bundle;
@@ -39,9 +38,9 @@ public class ActShopDetail extends ActBase implements OnClickListener {
 	}
 
 	private void initAbView() {
-		HeaderView header = (HeaderView) findViewById(R.id.header_detail);
-		header.setTitle(R.string.header_title_detail);
-		header.setOnBackListener(this);
+		View abView = findViewById(R.id.header_detail);
+		abView.findViewById(R.id.detail_back).setOnClickListener(this);
+		abView.findViewById(R.id.detail_star).setOnClickListener(this);
 	}
 
 	private void initView() {
@@ -61,7 +60,7 @@ public class ActShopDetail extends ActBase implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.back:
+		case R.id.detail_back:
 			onBackPressed();
 			break;
 		case R.id.detail_star:
