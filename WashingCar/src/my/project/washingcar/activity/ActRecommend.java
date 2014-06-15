@@ -4,11 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import my.project.washingcar.R;
+import my.project.washingcar.adapter.AdaChildArea;
 import my.project.washingcar.adapter.AdaRecommendShopBrief;
+import my.project.washingcar.model.ChildArea;
 import my.project.washingcar.model.ShopBrief;
+import my.project.washingcar.view.AreaDialogContentView;
+import android.app.Dialog;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
@@ -65,7 +72,7 @@ public class ActRecommend extends ActBase implements OnClickListener,
 			((ActMain) getParent()).showExitDialog();
 			break;
 		case R.id.recommend_area:
-
+			showAreaChooseDialog();
 			break;
 		case R.id.recommend_map:
 			switchActivity(ActLocation.class, null);
@@ -78,4 +85,24 @@ public class ActRecommend extends ActBase implements OnClickListener,
 		}
 	}
 
+	private void showAreaChooseDialog() {
+		Dialog dialog = new Dialog(this);
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		AreaDialogContentView contentView = new AreaDialogContentView(this);
+		List<ChildArea> childAreas = new ArrayList<ChildArea>();
+		String[] areaNames = { "全城", "钟楼区", "天宁区", "武进区", "新北区", "溧阳市", "金坛市",
+				"戚墅堰区" };
+		for (int i = 0; i < areaNames.length; i++) {
+			childAreas.add(new ChildArea(areaNames[i]));
+		}
+		contentView.setChildAreaAdapter(new AdaChildArea(this, childAreas));
+		dialog.setContentView(contentView);
+		Window window = dialog.getWindow();
+		// 重新设置
+		WindowManager.LayoutParams lp = window.getAttributes();
+		window.setGravity(Gravity.LEFT | Gravity.TOP);
+		lp.y = 60; // 新位置Y坐标
+		window.setAttributes(lp);
+		dialog.show();
+	}
 }

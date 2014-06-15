@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg"
+    android:orientation="vertical"
+    android:padding="10dip" >
+
+    <RelativeLayout
+        android:id="@+id/area_switch_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sel_zhankai_box1_bj"
+        android:clickable="true"
+        android:descendantFocusability="blocksDescendants" >
+
+        <TextView
+            android:id="@+id/area_current_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:text="当前城市："
+            android:textColor="#6b6b6b"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/area_city_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/area_current_city"
+            android:text="常州"
+            android:textColor="#6b6b6b"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:drawablePadding="5dip"
+            android:drawableRight="@drawable/zhankai_arrow"
+            android:text="更换"
+            android:textColor="#35a4f4"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <my.project.washingcar.view.NoScrollGridView
+        android:id="@+id/area_child_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:horizontalSpacing="8dip"
+        android:listSelector="@android:color/transparent"
+        android:numColumns="3"
+        android:scrollbars="none"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="10dip" />
+
+</LinearLayout>
