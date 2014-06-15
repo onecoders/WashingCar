@@ -68,7 +68,7 @@ public class ActRecommend extends ActBase implements OnClickListener,
 
 			break;
 		case R.id.recommend_map:
-
+			switchActivity(ActLocation.class, null);
 			break;
 		case R.id.recommend_search:
 

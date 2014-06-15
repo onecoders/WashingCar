@@ -5,7 +5,7 @@
     android:background="@color/ab_bg" >
 
     <LinearLayout
-        android:id="@+id/me_back"
+        android:id="@+id/location_back"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
@@ -29,11 +29,11 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/nearby_title"
+        android:id="@+id/location_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="我"
+        android:text="定位"
         android:textColor="@color/white"
         android:textSize="20sp" />
 

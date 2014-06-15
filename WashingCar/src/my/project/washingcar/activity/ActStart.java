@@ -3,7 +3,6 @@ package my.project.washingcar.activity;
 import my.project.washingcar.R;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
 
 public class ActStart extends ActBase {
 
@@ -17,13 +16,7 @@ public class ActStart extends ActBase {
 	}
 
 	private void init() {
-		setBackground();
 		delayAndSwitch2Main();
-	}
-
-	private void setBackground() {
-		View startPage = findViewById(R.id.start_page);
-		startPage.setBackgroundResource(R.drawable.start_image);
 	}
 
 	private void delayAndSwitch2Main() {

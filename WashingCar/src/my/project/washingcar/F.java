@@ -12,6 +12,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
+import com.baidu.mapapi.SDKInitializer;
 import com.google.gson.Gson;
 
 public class F {
@@ -32,9 +33,14 @@ public class F {
 
 	public static void init(Context context) {
 		L.enableLogging();//
+		initBaiduSDK(context);
 		initPrefAndGson(context);
 		initVersionInfo(context);
 		initRequestQueue(context);
+	}
+
+	private static void initBaiduSDK(Context context) {
+		SDKInitializer.initialize(context);
 	}
 
 	private static void initPrefAndGson(Context context) {
