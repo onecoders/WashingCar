@@ -12,10 +12,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class ActShopDetail extends ActBase implements OnClickListener {
 
+	private RelativeLayout photo;
 	private TextView currentPrice, originalPrice, soldCount;
 	private Button btnBuyNow;
 	private TextView introTitle, introContent, phoneNum, workPeriod, address;
@@ -44,6 +46,8 @@ public class ActShopDetail extends ActBase implements OnClickListener {
 	}
 
 	private void initView() {
+		photo = (RelativeLayout) findViewById(R.id.detail_photo);
+		photo.setOnClickListener(this);
 		originalPrice = (TextView) findViewById(R.id.detail_original_price);
 		originalPrice.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
 	}
@@ -65,6 +69,9 @@ public class ActShopDetail extends ActBase implements OnClickListener {
 			break;
 		case R.id.detail_star:
 
+			break;
+		case R.id.detail_photo:
+			switchActivity(ActImagePager.class, null);
 			break;
 		default:
 			break;

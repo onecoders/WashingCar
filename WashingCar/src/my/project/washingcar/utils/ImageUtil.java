@@ -7,6 +7,7 @@ import android.widget.ImageView;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.assist.ImageLoadingListener;
 
 public class ImageUtil {
 
@@ -15,6 +16,12 @@ public class ImageUtil {
 	public static void display(Context context, String url, ImageView imageView) {
 		ImageLoader.getInstance().displayImage(url, imageView,
 				getDisplayImageOptions());
+	}
+
+	public static void display(String uri, ImageView imageView,
+			ImageLoadingListener listener) {
+		ImageLoader.getInstance().displayImage(uri, imageView,
+				getDisplayImageOptions(), listener);
 	}
 
 	private static synchronized DisplayImageOptions getDisplayImageOptions() {

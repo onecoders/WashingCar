@@ -50,10 +50,10 @@ public abstract class ActBase extends AbActivity implements OnCancelListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		init();
+		initNetWorkReceiver();
 	}
 
-	private void init() {
+	private void initNetWorkReceiver() {
 		currentConnected = isNetworkConnected();
 		registerReceiver();
 	}

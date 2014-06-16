@@ -27,6 +27,8 @@
     <string name="nearby_choose_nearest">最近距离</string>
     <string name="nearby_choose_hotest">最热门店</string>
     <string name="nearby_choose_highest_discount">最高折扣</string>
+    <!-- image pager -->
+    <string name="image_load_error">图片获取失败</string>
     <!-- data load and net -->
     <string name="downloading">下载中&#8230;</string>
     <string name="network_ungelivable">网络不给力，请稍后重试！</string>

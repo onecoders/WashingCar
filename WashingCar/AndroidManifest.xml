@@ -85,6 +85,10 @@
             android:name=".activity.ActSearch"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Sherlock.Light.NoActionBar" />
+        <activity
+            android:name=".activity.ActImagePager"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Sherlock.NoActionBar" />
 
         <service
             android:name="com.baidu.location.f"
