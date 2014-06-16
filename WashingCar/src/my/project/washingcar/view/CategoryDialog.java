@@ -1,23 +1,21 @@
 package my.project.washingcar.view;
 
+import my.project.washingcar.R;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.Window;
 import android.view.WindowManager;
-import android.view.WindowManager.LayoutParams;
 
 public class CategoryDialog extends Dialog {
 
 	public CategoryDialog(Context context) {
-		this(context, true, null);
+		this(context, R.style.DialogTheme);
 	}
 
-	protected CategoryDialog(Context context, boolean cancelable,
-			OnCancelListener cancelListener) {
-		super(context, cancelable, cancelListener);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
+	public CategoryDialog(Context context, int theme) {
+		super(context, theme);
 	}
 
 	@Override
@@ -28,9 +26,7 @@ public class CategoryDialog extends Dialog {
 		WindowManager.LayoutParams params = window.getAttributes();
 		window.setGravity(Gravity.LEFT | Gravity.CENTER_HORIZONTAL
 				| Gravity.TOP);
-		params.y = 60; // 新位置Y坐标
-		params.width = LayoutParams.MATCH_PARENT;
-		params.height = LayoutParams.WRAP_CONTENT;
+		params.y = 72; // 新位置Y坐标
 		window.setAttributes(params);
 	}
 

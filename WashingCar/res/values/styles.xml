@@ -38,4 +38,10 @@
         <item name="android:padding">0.0dip</item>
     </style>
 
+    <style name="DialogTheme" parent="android:Theme.Dialog">
+        <item name="android:windowBackground">@drawable/sel_zhankai_box1_bj</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
 </resources>
