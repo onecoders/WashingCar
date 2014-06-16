@@ -21,6 +21,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
+            <!-- 用户头像 & 用户名 -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="188dip"

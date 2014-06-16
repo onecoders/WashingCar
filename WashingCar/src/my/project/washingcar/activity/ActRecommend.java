@@ -73,16 +73,12 @@ public class ActRecommend extends ActBase implements OnClickListener,
 
 			@Override
 			public void onRefresh() {
-				showProgressHUD();
 				recommendShops.stopRefresh();
-				dismissProgressHUD();
 			}
 
 			@Override
 			public void onLoadMore() {
-				showProgressHUD();
 				recommendShops.stopLoadMore();
-				dismissProgressHUD();
 			}
 
 		});

@@ -71,16 +71,12 @@ public class ActNearBy extends ActBase implements OnClickListener,
 
 			@Override
 			public void onRefresh() {
-				showProgressHUD();
 				nearbyShops.stopRefresh();
-				dismissProgressHUD();
 			}
 
 			@Override
 			public void onLoadMore() {
-				showProgressHUD();
 				nearbyShops.stopLoadMore();
-				dismissProgressHUD();
 			}
 
 		});
