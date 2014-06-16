@@ -9,13 +9,11 @@ import my.project.washingcar.adapter.AdaRecommendShopBrief;
 import my.project.washingcar.model.ChildArea;
 import my.project.washingcar.model.ShopBrief;
 import my.project.washingcar.view.AreaChooseDialogContentView;
+import my.project.washingcar.view.CategoryDialog;
 import android.app.Dialog;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
@@ -103,16 +101,9 @@ public class ActRecommend extends ActBase implements OnClickListener,
 	}
 
 	private void showAreaChooseDialog() {
-		areaChooseDialog = new Dialog(this);
-		areaChooseDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		areaChooseDialog = new CategoryDialog(this);
 		View contentView = createAreaChooseContentView();
 		areaChooseDialog.setContentView(contentView);
-		Window window = areaChooseDialog.getWindow();
-		// 重新设置
-		WindowManager.LayoutParams lp = window.getAttributes();
-		window.setGravity(Gravity.LEFT | Gravity.TOP);
-		lp.y = 60; // 新位置Y坐标
-		window.setAttributes(lp);
 		areaChooseDialog.show();
 	}
 

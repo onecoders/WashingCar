@@ -6,14 +6,12 @@ import java.util.List;
 import my.project.washingcar.R;
 import my.project.washingcar.adapter.AdaNearbyShopBrief;
 import my.project.washingcar.model.ShopBrief;
+import my.project.washingcar.view.CategoryDialog;
 import my.project.washingcar.view.NearbyChooseDialogContentView;
 import android.app.Dialog;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
@@ -91,16 +89,9 @@ public class ActNearBy extends ActBase implements OnClickListener,
 	}
 
 	private void showNearbyChooseDialog() {
-		nearbyChooseDialog = new Dialog(this);
-		nearbyChooseDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		nearbyChooseDialog = new CategoryDialog(this);
 		View contentView = createNearByChooseContentView();
 		nearbyChooseDialog.setContentView(contentView);
-		Window window = nearbyChooseDialog.getWindow();
-		// 重新设置
-		WindowManager.LayoutParams lp = window.getAttributes();
-		window.setGravity(Gravity.LEFT | Gravity.TOP);
-		lp.y = 60; // 新位置Y坐标
-		window.setAttributes(lp);
 		nearbyChooseDialog.show();
 	}
 
