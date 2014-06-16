@@ -26,6 +26,7 @@
             android:background="@drawable/search_box_bj"
             android:drawableLeft="@drawable/search_icon_search"
             android:hint="请输入商家名、分类或商圈"
+            android:singleLine="true"
             android:textColor="#b3b3b3"
             android:textSize="14sp" />
 

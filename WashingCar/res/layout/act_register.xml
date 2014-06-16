@@ -32,6 +32,8 @@
             android:drawableLeft="@drawable/sel_login_icon_user"
             android:drawablePadding="5dip"
             android:hint="用户名"
+            android:maxLength="11"
+            android:singleLine="true"
             android:textColor="@drawable/login_edit_text"
             android:textSize="16sp" />
 
@@ -52,6 +54,8 @@
             android:drawablePadding="5dip"
             android:hint="手机号码"
             android:inputType="phone"
+            android:maxLength="11"
+            android:singleLine="true"
             android:textColor="@drawable/login_edit_text"
             android:textSize="16sp" />
     </LinearLayout>
@@ -76,6 +80,7 @@
             android:hint="验证码"
             android:inputType="number"
             android:paddingLeft="20dip"
+            android:singleLine="true"
             android:textColor="@drawable/login_edit_text"
             android:textSize="16sp" />
 
