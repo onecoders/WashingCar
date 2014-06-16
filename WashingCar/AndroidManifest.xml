@@ -40,7 +40,7 @@
         android:theme="@style/Theme.Sherlock.Light" >
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="Vb4k9ot8XWu4PYng5cCS1Bdu" />
+            android:value="CvPtn73lWbQ3ZNKsAGYYHjrg" />
 
         <activity
             android:name=".activity.ActStart"
