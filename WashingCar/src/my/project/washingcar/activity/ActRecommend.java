@@ -16,14 +16,18 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ListView;
 import android.widget.TextView;
+
+import com.ab.view.listener.AbOnListViewListener;
+import com.ab.view.pullview.AbPullListView;
 
 public class ActRecommend extends ActBase implements OnClickListener,
 		OnItemClickListener {
 
-	private ListView recommendShops;
+	private AbPullListView recommendShops;
 	private List<ShopBrief> shopBrieves;
+	private int currentPage = 1;
+	private int pageSize = 15;
 
 	private TextView areaChoose;
 	private Dialog areaChooseDialog;
@@ -54,8 +58,34 @@ public class ActRecommend extends ActBase implements OnClickListener,
 
 	private void initViews() {
 		shopBrieves = new ArrayList<ShopBrief>();
-		recommendShops = (ListView) findViewById(R.id.recommend_shops);
+		recommendShops = (AbPullListView) findViewById(R.id.recommend_shops);
+		// 打开关闭下拉刷新加载更多功能
+		recommendShops.setPullRefreshEnable(true);
+		recommendShops.setPullLoadEnable(true);
+		// 设置进度条的样式
+		recommendShops.getHeaderView().setHeaderProgressBarDrawable(
+				getResources().getDrawable(R.drawable.progress_circular));
+		recommendShops.getFooterView().setFooterProgressBarDrawable(
+				getResources().getDrawable(R.drawable.progress_circular));
 		recommendShops.setOnItemClickListener(this);
+
+		recommendShops.setAbOnListViewListener(new AbOnListViewListener() {
+
+			@Override
+			public void onRefresh() {
+				showProgressHUD();
+				recommendShops.stopRefresh();
+				dismissProgressHUD();
+			}
+
+			@Override
+			public void onLoadMore() {
+				showProgressHUD();
+				recommendShops.stopLoadMore();
+				dismissProgressHUD();
+			}
+
+		});
 	}
 
 	@Override

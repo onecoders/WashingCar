@@ -14,16 +14,20 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ListView;
 import android.widget.TextView;
+
+import com.ab.view.listener.AbOnListViewListener;
+import com.ab.view.pullview.AbPullListView;
 
 public class ActNearBy extends ActBase implements OnClickListener,
 		OnItemClickListener {
 
 	private TextView nearbyCategory;
 
-	private ListView nearbyShops;
+	private AbPullListView nearbyShops;
 	private List<ShopBrief> shopBrieves;
+	private int currentPage = 1;
+	private int pageSize = 15;
 
 	private Dialog nearbyChooseDialog;
 
@@ -52,8 +56,34 @@ public class ActNearBy extends ActBase implements OnClickListener,
 
 	private void initViews() {
 		shopBrieves = new ArrayList<ShopBrief>();
-		nearbyShops = (ListView) findViewById(R.id.nearby_shops);
+		nearbyShops = (AbPullListView) findViewById(R.id.nearby_shops);
+		// 打开关闭下拉刷新加载更多功能
+		nearbyShops.setPullRefreshEnable(true);
+		nearbyShops.setPullLoadEnable(true);
+		// 设置进度条的样式
+		nearbyShops.getHeaderView().setHeaderProgressBarDrawable(
+				getResources().getDrawable(R.drawable.progress_circular));
+		nearbyShops.getFooterView().setFooterProgressBarDrawable(
+				getResources().getDrawable(R.drawable.progress_circular));
 		nearbyShops.setOnItemClickListener(this);
+
+		nearbyShops.setAbOnListViewListener(new AbOnListViewListener() {
+
+			@Override
+			public void onRefresh() {
+				showProgressHUD();
+				nearbyShops.stopRefresh();
+				dismissProgressHUD();
+			}
+
+			@Override
+			public void onLoadMore() {
+				showProgressHUD();
+				nearbyShops.stopLoadMore();
+				dismissProgressHUD();
+			}
+
+		});
 	}
 
 	@Override

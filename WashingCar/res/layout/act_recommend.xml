@@ -12,7 +12,7 @@
         android:layout_height="@dimen/action_bar_default_height"
         layout="@layout/ab_recommend" />
 
-    <ListView
+    <com.ab.view.pullview.AbPullListView
         android:id="@+id/recommend_shops"
         android:layout_width="match_parent"
         android:layout_height="0dip"
@@ -20,8 +20,9 @@
         android:divider="@null"
         android:dividerHeight="0.0px"
         android:fadingEdgeLength="0dip"
+        android:fastScrollEnabled="true"
         android:listSelector="@android:color/transparent"
         android:scrollbars="none" >
-    </ListView>
+    </com.ab.view.pullview.AbPullListView>
 
 </LinearLayout>

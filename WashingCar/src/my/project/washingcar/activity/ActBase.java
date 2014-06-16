@@ -7,7 +7,6 @@ import my.project.washingcar.R;
 import my.project.washingcar.utils.MToast;
 import my.project.washingcar.utils.NetworkUtil;
 import my.project.washingcar.view.ProgressHUD;
-import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -18,6 +17,8 @@ import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.text.TextUtils;
 
+import com.ab.activity.AbActivity;
+
 /**
  * Base Activity
  * 
@@ -25,7 +26,7 @@ import android.text.TextUtils;
  * @email onecoders@gmail.com
  */
 
-public abstract class ActBase extends Activity implements OnCancelListener {
+public abstract class ActBase extends AbActivity implements OnCancelListener {
 
 	private ProgressHUD mProgressHUD;
 
@@ -83,11 +84,11 @@ public abstract class ActBase extends Activity implements OnCancelListener {
 		mProgressHUD.dismiss();
 	}
 
-	protected void showToast(int resId) {
+	public void showToast(int resId) {
 		MToast.showText(this, resId);
 	}
 
-	protected void showToast(String msg) {
+	public void showToast(String msg) {
 		MToast.showText(this, msg);
 	}
 
