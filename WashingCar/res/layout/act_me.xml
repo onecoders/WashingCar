@@ -271,7 +271,7 @@
                         android:layout_alignParentLeft="true"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="20dip"
-                        android:text="关于去洗车"
+                        android:text="关于车优惠"
                         android:textColor="#a5a5a5"
                         android:textSize="14sp" />
 

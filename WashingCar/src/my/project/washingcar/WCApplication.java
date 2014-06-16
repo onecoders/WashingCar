@@ -3,6 +3,7 @@ package my.project.washingcar;
 import android.app.Application;
 import android.content.Context;
 
+import com.baidu.mapapi.SDKInitializer;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -13,6 +14,7 @@ public class WCApplication extends Application {
 	@Override
 	public void onCreate() {
 		super.onCreate();
+		SDKInitializer.initialize(this);
 		initImageLoader(getApplicationContext());
 		F.init(getApplicationContext());
 	}

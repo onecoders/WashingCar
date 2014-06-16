@@ -115,7 +115,6 @@ public class ActLocation extends ActBase implements OnClickListener,
 
 	@Override
 	protected void onDestroy() {
-		mLocClient.unRegisterLocationListener(this);
 		// 退出时销毁定位
 		mLocClient.stop();
 		// 关闭定位图层
